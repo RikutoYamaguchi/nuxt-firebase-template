@@ -27,19 +27,7 @@ https://firebase.google.com/docs/cli?hl=ja
 
 ### 2. Create firebase project and upgrade plan to "Blaze"
 
-### 3. Set project id
-
-`.firebaserc`
-
-```
-{
-  "projects": {
-    "default": "your project id"
-  }
-}
-```
-
-### 4. Get firebase ci token
+### 3. Get firebase ci token
 
 ```
 firebase login:ci
@@ -47,15 +35,19 @@ firebase login:ci
 
 ※ Copy generated token.
 
-### 5. Set github secret
+### 4. Set github secrets
 
 `Setting` > `Secrets` > `New Secret`
 
 - Name: FIREBASE_TOKEN
 - Value: Paste your ci token
 
-### 6. First time deployment from local
+- Name: FIREBASE_PROJECT_ID
+- Value: Your project id
+
+### 5. First time deployment from local
 
 ```
+firebase use {your_project_id}
 firebase deploy
 ```
