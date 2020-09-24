@@ -51,3 +51,19 @@ firebase login:ci
 firebase use {your_project_id}
 firebase deploy
 ```
+
+## Change Basic auth user and password
+
+`./functions/index.js`
+
+```
+app.all(
+  '/*',
+  basicAuth(
+    (user, password) =>
+      user === 'basic_auth_user' && password === 'basic_auth_password'
+  )
+)
+```
+
+Change `'basic_auth_user'` and `'basic_auth_password'`
