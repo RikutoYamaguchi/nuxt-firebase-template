@@ -21,9 +21,13 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Firebase Setup
 
-### 1. Create firebase project and upgrade plan to "Blaze"
+### 1. Install firebase cli
 
-### 2. Set project id
+https://firebase.google.com/docs/cli?hl=ja
+
+### 2. Create firebase project and upgrade plan to "Blaze"
+
+### 3. Set project id
 
 `.firebaserc`
 
@@ -35,7 +39,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 }
 ```
 
-### 3. Get firebase ci token
+### 4. Get firebase ci token
 
 ```
 firebase login:ci
@@ -43,9 +47,15 @@ firebase login:ci
 
 ※ Copy generated token.
 
-### 4. Set github secret
+### 5. Set github secret
 
 `Setting` > `Secrets` > `New Secret`
 
 - Name: FIREBASE_TOKEN
 - Value: Paste your ci token
+
+### 6. First time deployment from local
+
+```
+firebase deploy
+```
